@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -31,12 +32,9 @@
                 <td>{{ $car->description }}</td>
                 <td>
                     @foreach($car->CarImages as $img)
-                    {{$img->name}}
+                    <img src="{{asset('storage/files/'.$img->name)}}" style="height: 100px;" />
                     @endforeach
                 </td>
-
-
-
             </tr>
             @endforeach
         </tbody>
@@ -44,3 +42,7 @@
 </div>
 
 @endsection
+
+<?php
+//phpinfo();
+?>

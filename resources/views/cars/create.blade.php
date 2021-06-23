@@ -13,22 +13,24 @@
 </div>
 
 
-<form action="{{ route('cars.store') }}" method="POST">
+<form action="{{ route('cars.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('post')
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Name</label>
-            <input type="text" class="form-control" id="inputEmail4" placeholder="Name" name="name">
+            <label for="InputName">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name">
         </div>
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Description</label>
-            <textarea type="text" style="height:37px" class="form-control" id="inputPassword4" placeholder="Description" name="description"></textarea>
+            <label for="inputDesc">Description</label>
+            <textarea type="text" style="height:37px" class="form-control" id="description" placeholder="Description" name="description"></textarea>
         </div>
     </div>
 
     <div class="form-group">
         <label for="inputAddress">Photo</label>
-        <input type="file" class="form-control" multiple name="images[]">
+        <input type="file" class="form-control" name="images[]" multiple>
     </div>
 
 
@@ -37,6 +39,7 @@
         <button type="submit" class="btn btn-primary">ADD</button>
     </div>
 
+{{--    <img src="{{asset('storage/files/profile-60d096c9dbb98.jpg')}}" alt=""/>--}}
 
 </form>
 @endsection

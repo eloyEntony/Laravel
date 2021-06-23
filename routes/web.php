@@ -24,3 +24,10 @@ Route::resource('projects', ProjectController::class);
 Route::resource('cars', CarController::class);
 
 Route::get("/cars", [\App\Http\Controllers\CarController::class, "Index"])->name("cars.index");
+
+Route::get("/cars/create",[\App\Http\Controllers\CarController::class, "Create"])->name("cars.create");
+Route::post("/cars/store",[\App\Http\Controllers\CarController::class, "Store"])->name("cars.store");
+
+Route::get("/photos", [\App\Http\Controllers\PhotoController::class, "Index"])->name("photos.index");
+
+
